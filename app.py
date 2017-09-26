@@ -58,14 +58,10 @@ app = Flask(__name__) #create instance of class
 #assign following fxn to run when
 #root route requested
 
-@app.route("/srthr")
-def hello_world():
-    return  "<b>anything in this whole wide world</b>"
-coll = [0,1,1,2,3,5,8]
-
 @app.route("/")
 def ret():
-    return  render_template('speed.html', foo = "foooo",occupation = rand_job(),  collection = d)
+    title = "Homework 05"
+    return  render_template('speed.html', the_title = title, occupation = rand_job(),  collection = d)
 
 if __name__=="__main__":
     app.debug = True

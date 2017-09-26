@@ -1,17 +1,20 @@
 <! DOCTYPE html>
 <html>
   <head>
-    <title>{{foo}}</title>
+    <title>{{the_title}}</title>
   </head>
 <body>
-<table border="1">
+<center>
+<table border="1" >
+<tr> <td bgcolor = "#AAD899"> <b> Occupation </b> </td> <td bgcolor = "#849ABB"> <b>Percentage </b> </td>
   {% for item in collection %}
 <tr>
-<td><b> {{item}} </b></td><td> {{ collection[item] }}</td></tr>
+<td> {{item}} </td><td> {{ collection[item] }}</td></tr>
 {% endfor %}
 </table>
 
 <p>
+<b> Random Occupation: </b>
 {{ occupation }}
 
 </body>

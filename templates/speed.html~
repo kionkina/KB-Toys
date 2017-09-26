@@ -4,8 +4,15 @@
     <title>{{foo}}</title>
   </head>
 <body>
+<table border="1">
   {% for item in collection %}
-<b> {{item}} </b>
+<tr>
+<td><b> {{item}} </b></td><td> {{ collection[item] }}</td></tr>
 {% endfor %}
+</table>
+
+<p>
+{{ occupation }}
+
 </body>
 </html>
