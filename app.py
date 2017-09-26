@@ -1,7 +1,7 @@
 """Karina Ionkina, Ibnul Jahan
 SoftDev1 pd7
-HW03 -- StI/O: Divine your Destiny!
-2017-09-15
+HW05 -- Jinja Tuning
+2017-09-26
 """
 
 import random
