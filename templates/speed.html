@@ -1,0 +1,19 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <title>{{foo}}</title>
+  </head>
+<body>
+<table border="1">
+  {% for item in collection %}
+<tr>
+<td><b> {{item}} </b></td><td> {{ collection[item] }}</td></tr>
+{% endfor %}
+</table>
+
+<p>
+{% block body %}
+{{ occupation }}
+{% endblock %}
+</body>
+</html>

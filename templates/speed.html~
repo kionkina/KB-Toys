@@ -1,0 +1,11 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <title>{{foo}}</title>
+  </head>
+<body>
+  {% for item in collection %}
+<b> {{item}} </b>
+{% endfor %}
+</body>
+</html>
