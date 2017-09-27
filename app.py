@@ -35,8 +35,8 @@ for str in file.readlines()[1:len(file.readlines())-1]:
     else:
         d[line[0]] = ",".join(line[1:])
 
-for i in d:
-    print i
+#for i in d:
+#    print i
 
 def rand_job():
 	count = 0
@@ -70,7 +70,7 @@ def hello():
 def ret():
     title = "Homework 05"
     return  render_template('speed.html', the_title = title, occupation = rand_job(),  collection = d)
-print d
+#print d
 
 if __name__=="__main__":
     app.debug = True
