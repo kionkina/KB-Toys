@@ -24,15 +24,19 @@ d = {}
 
 #file.readlines is an array with the lines of the documents
 #we parse starting at index 1
+    
+
 for str in file.readlines()[1:len(file.readlines())-1]:
     line = str.split(',')
     #if there are commas in the job class
-    if len(line) > 2:
-        the_key = ",".join(line[:len(line)-1])
-        d[the_key] = float(line[len(line) - 1])
+    if len(line) > 3:
+        the_key = ",".join(line[:len(line) - 2])
+        d[the_key] = float(line[len(line) - 2])
     else:
         d[line[0]] = float(line[1])
-#print d
+
+for i in d:
+    print i
 
 def rand_job():
 	count = 0
@@ -59,11 +63,15 @@ app = Flask(__name__) #create instance of class
 #root route requested
 
 @app.route("/")
+def hello():
+    return " <center> <font size = 20px> <a href = '/occupations'> Occupations </a> "
+
+@app.route("/occupations")
 def ret():
     title = "Homework 05"
     return  render_template('speed.html', the_title = title, occupation = rand_job(),  collection = d)
-
+"""
 if __name__=="__main__":
     app.debug = True
     app.run()
-
+"""
