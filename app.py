@@ -31,9 +31,9 @@ for str in file.readlines()[1:len(file.readlines())-1]:
     #if there are commas in the job class
     if len(line) > 3:
         the_key = ",".join(line[:len(line) - 2])
-        d[the_key] = float(line[len(line) - 2])
+        d[the_key] = ",".join(line[len(line) - 2:])
     else:
-        d[line[0]] = float(line[1])
+        d[line[0]] = ",".join(line[1:])
 
 for i in d:
     print i
@@ -45,7 +45,7 @@ def rand_job():
 	#rand represents a random number between 1 and 998, which coincides with the values of the percentages of the jobs
 	#print rand
 	for key in d:
-		count = count + (d[key]*10)
+		count = count + (float(d[key].split(',')[0])*10)
 		#add to count to find out which occupation to stop at
 		#print count
 		if count >= rand:
@@ -70,8 +70,9 @@ def hello():
 def ret():
     title = "Homework 05"
     return  render_template('speed.html', the_title = title, occupation = rand_job(),  collection = d)
-"""
+print d
+
 if __name__=="__main__":
     app.debug = True
     app.run()
-"""
+

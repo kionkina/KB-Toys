@@ -1,21 +1,25 @@
 <! DOCTYPE html>
 <html>
   <head>
-    <title>{{the_title}}</title>
+    <title>{{ the_title }}</title>
   </head>
-<body>
-<center>
-<table border="1" >
-<tr> <td bgcolor = "#AAD899"> <b> Occupation </b> </td> <td bgcolor = "#849ABB"> <b>Percentage </b> </td>
-  {% for item in collection %}
-<tr>
-<td> {{item}} </td><td> {{ collection[item] }}</td></tr>
-{% endfor %}
-</table>
+  <body>
+    <center><h1>Looking for a job? Not sure where to start?</h1></center>
+    <p>Below you will see a table built to make the job search just that much easier for you. This chart shows a series of different occupations, and follows them with a list of percentages related to them. Lastly, they are followed by links to help you get started in you application. <b>Good luck!</b></p>
+    <hr>
+    <center>
+      <table border="1" >
+	<tr> <td bgcolor = "#AAD899"> <b> Occupation </b> </td> <td bgcolor = "#849ABB"> <b>Percentage </b> </td> <td bgcolor = "#FFGG33"> <b> Link </b> </td>
+	{% for item in collection %}
+	<tr>
+	  <td> {{item}} </td><td> {{ collection[item].split(",")[0] }}</td><td> <a href="{{ collection[item].split(",")[1] }}">{{ collection[item].split(",")[1] }}</a></td>
+	</tr>
+	{% endfor %}
+      </table>
 
-<p>
-<b> Random Occupation: </b>
-{{ occupation }}
+      <p>
+	<b> Random Occupation: </b>
+	{{ occupation }}
 
-</body>
+  </body>
 </html>
