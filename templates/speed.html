@@ -11,8 +11,8 @@
       <table border="1" >
 	<tr> <td bgcolor = "#AAD899"> <b> Occupation </b> </td> <td bgcolor = "#849ABB"> <b>Percentage </b> </td> <td bgcolor = "#FFGG33"> <b> Link </b> </td>
 	{% for item in collection %}
-	<tr>
-	  <td {% if item==occupation %} bgcolor ="#AAD899" {% endif %}> {{item}} </td><td {% if item==occupation %} bgcolor ="#AAD899" {% endif %}> {{ collection[item].split(",")[0] }}</td><td {% if item==occupation %} bgcolor ="#AAD899" {% endif %}> <a href="{{ collection[item].split(",")[1] }}">{{ collection[item].split(",")[1] }}</a></td>
+	<tr {% if item==occupation %} bgcolor ="#AAD899" {% endif %}>
+	  <td > {{item}} </td><td> {{ collection[item].split(",")[0] }}</td><td> <a href="{{ collection[item].split(",")[1] }}">{{ collection[item].split(",")[1] }}</a></td>
 	</tr>
 	{% endfor %}
       </table>

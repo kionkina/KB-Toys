@@ -1,0 +1,11 @@
+def csv_to_dict(file):
+    d = {}
+    for str in file.readlines()[1:len(file.readlines())-1]:
+        line = str.split(',')
+        #if there are commas in the job class
+        if len(line) > 3:
+            the_key = ",".join(line[:len(line) - 2])
+            d[the_key] = ",".join(line[len(line) - 2:])
+        else:
+            d[line[0]] = ",".join(line[1:])
+    return d
